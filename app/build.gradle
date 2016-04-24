@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'jacoco'
 
 android {
 
@@ -20,12 +21,14 @@ android {
 			minifyEnabled false
 			versionNameSuffix "-SNAPSHOT"
 			debuggable true
+			testCoverageEnabled true
 		}
 
 		release {
 			minifyEnabled false
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 			debuggable false
+			testCoverageEnabled true
 		}
 	}
 
