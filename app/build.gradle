@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 android {
 
 	compileSdkVersion 23
-	buildToolsVersion "23.0.3"
+	buildToolsVersion "23.0.1"
 
 	defaultConfig {
 		applicationId "pl.info.czerwinski.android.calculator"
@@ -32,6 +32,10 @@ android {
 	sourceSets {
 		main.java.srcDirs += 'src/main/kotlin'
 		test.java.srcDirs += 'src/test/kotlin'
+	}
+
+	lintOptions {
+		abortOnError false
 	}
 }
 

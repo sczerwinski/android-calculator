@@ -2,9 +2,12 @@ language: android
 
 android:
   components:
-    - build-tools-23.0.3
+    - build-tools-23.0.1
     - android-23
     - extra
+
+env:
+  - GRADLE_OPTS="-Xmx512m -XX:MaxPermSize=512m"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
