@@ -11,11 +11,11 @@ import org.robolectric.annotation.Config
 @Config(constants = BuildConfig::class, sdk = intArrayOf(21))
 class MainActivityTest {
 
-	val activity : MainActivity by lazy { Robolectric.setupActivity(MainActivity::class.java) }
+	val activity: MainActivity by lazy { Robolectric.setupActivity(MainActivity::class.java) }
 
 	@Test
 	fun activityShouldBeCreated() {
 		assertNotNull(activity)
-		assertNotNull(activity.textView)
+		assertNotNull(activity.lcd)
 	}
 }
