@@ -11,6 +11,7 @@
 		tools:context="pl.info.czerwinski.android.calculator.MainActivity">
 
 	<TextView
+			android:id="@+id/text"
 			android:text="Hello World!"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"/>
