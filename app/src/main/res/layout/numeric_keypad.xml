@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:weightSum="5">
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:weightSum="4">
+
+		<Button
+				android:id="@+id/button_clear"
+				android:text="@string/button_clear"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Special"/>
+
+		<Button
+				android:id="@+id/button_times"
+				android:text="@string/button_times"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Operation"/>
+
+		<Button
+				android:id="@+id/button_div"
+				android:text="@string/button_div"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Operation"/>
+
+		<Button
+				android:id="@+id/button_back"
+				android:text="@string/button_back"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Special"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:weightSum="4">
+
+		<Button
+				android:id="@+id/button_7"
+				android:text="@string/button_7"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_8"
+				android:text="@string/button_8"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_9"
+				android:text="@string/button_9"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_brackets"
+				android:text="@string/button_brackets"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Operation"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:weightSum="4">
+
+		<Button
+				android:id="@+id/button_4"
+				android:text="@string/button_4"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_5"
+				android:text="@string/button_5"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_6"
+				android:text="@string/button_6"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_minus"
+				android:text="@string/button_minus"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Operation"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:weightSum="4">
+
+		<Button
+				android:id="@+id/button_1"
+				android:text="@string/button_1"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_2"
+				android:text="@string/button_2"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_3"
+				android:text="@string/button_3"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_plus"
+				android:text="@string/button_plus"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Operation"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:weightSum="4">
+
+		<Button
+				android:id="@+id/button_0"
+				android:text="@string/button_0"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_decimal"
+				android:text="@string/button_decimal"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_plus_minus"
+				android:text="@string/button_plus_minus"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Numeric"/>
+
+		<Button
+				android:id="@+id/button_exec"
+				android:text="@string/button_exec"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				style="@style/AppTheme.Button.Special"/>
+
+	</LinearLayout>
+
+</LinearLayout>

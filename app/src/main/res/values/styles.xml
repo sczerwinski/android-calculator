@@ -26,4 +26,25 @@
 		<item name="android:gravity">right</item>
 	</style>
 
+	<style name="AppTheme.Button">
+		<item name="android:textSize">@dimen/button_text_size</item>
+		<item name="android:textColor">@color/button_text</item>
+		<item name="android:layout_marginLeft">@dimen/button_horizontal_margin</item>
+		<item name="android:layout_marginRight">@dimen/button_horizontal_margin</item>
+		<item name="android:layout_marginTop">@dimen/button_vertical_margin</item>
+		<item name="android:layout_marginBottom">@dimen/button_vertical_margin</item>
+	</style>
+
+	<style name="AppTheme.Button.Numeric" parent="AppTheme.Button">
+		<item name="android:background">@drawable/button_numeric</item>
+	</style>
+
+	<style name="AppTheme.Button.Operation" parent="AppTheme.Button">
+		<item name="android:background">@drawable/button_operation</item>
+	</style>
+
+	<style name="AppTheme.Button.Special" parent="AppTheme.Button">
+		<item name="android:background">@drawable/button_special</item>
+	</style>
+
 </resources>

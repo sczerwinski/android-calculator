@@ -32,4 +32,15 @@
 	<color name="lcd_text">@color/material_black</color>
 	<color name="lcd_background">@color/material_light_green_100</color>
 
+	<color name="button_text">@color/material_white</color>
+	<color name="button_numeric_start">@color/material_grey_500</color>
+	<color name="button_numeric_center">@color/material_grey_600</color>
+	<color name="button_numeric_end">@color/material_grey_700</color>
+	<color name="button_operation_start">@color/material_grey_800</color>
+	<color name="button_operation_center">@color/material_grey_900</color>
+	<color name="button_operation_end">@color/material_black</color>
+	<color name="button_special_start">@color/material_amber_500</color>
+	<color name="button_special_center">@color/material_amber_700</color>
+	<color name="button_special_end">@color/material_amber_900</color>
+
 </resources>
