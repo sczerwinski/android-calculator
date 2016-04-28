@@ -17,6 +17,7 @@
 			style="@style/AppTheme.Lcd"/>
 
 	<pl.info.czerwinski.android.calculator.widget.NumericKeypad
+			android:id="@+id/numeric_keypad"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_below="@id/lcd"
