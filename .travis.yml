@@ -9,5 +9,8 @@ android:
 env:
   - GRADLE_OPTS="-Xmx512m -XX:MaxPermSize=512m"
 
+script:
+  - ./gradlew clean build testDebugUnitTestCoverage
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
