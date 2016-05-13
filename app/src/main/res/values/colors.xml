@@ -6,9 +6,14 @@
 
 	<color name="material_light_green_100">#DCEDC8</color>
 
-	<color name="material_amber_500">#FFC107</color>
+	<color name="material_amber_500">#FFC140</color>
 	<color name="material_amber_700">#FFA000</color>
+	<color name="material_amber_800">#FF8F00</color>
 	<color name="material_amber_900">#FF6F00</color>
+
+	<color name="material_brown_500">#795548</color>
+	<color name="material_brown_600">#6D4C41</color>
+	<color name="material_brown_700">#5D4037</color>
 
 	<color name="material_grey_300">#E0E0E0</color>
 	<color name="material_grey_400">#BDBDBD</color>
@@ -18,6 +23,10 @@
 	<color name="material_grey_800">#424242</color>
 	<color name="material_grey_900">#212121</color>
 
+	<color name="material_blue_grey_400">#78909C</color>
+	<color name="material_blue_grey_500">#607D8B</color>
+	<color name="material_blue_grey_550">#5A7683</color>
+	<color name="material_blue_grey_600">#546E7A</color>
 	<color name="material_blue_grey_700">#455A64</color>
 	<color name="material_blue_grey_800">#37474F</color>
 	<color name="material_blue_grey_900">#263238</color>
@@ -33,14 +42,14 @@
 	<color name="lcd_background">@color/material_light_green_100</color>
 
 	<color name="button_text">@color/material_white</color>
-	<color name="button_numeric_start">@color/material_grey_500</color>
-	<color name="button_numeric_center">@color/material_grey_600</color>
-	<color name="button_numeric_end">@color/material_grey_700</color>
+	<color name="button_numeric_start">@color/material_blue_grey_500</color>
+	<color name="button_numeric_center">@color/material_blue_grey_550</color>
+	<color name="button_numeric_end">@color/material_blue_grey_600</color>
 	<color name="button_operation_start">@color/material_grey_800</color>
 	<color name="button_operation_center">@color/material_grey_900</color>
 	<color name="button_operation_end">@color/material_black</color>
-	<color name="button_special_start">@color/material_amber_500</color>
-	<color name="button_special_center">@color/material_amber_700</color>
+	<color name="button_special_start">@color/material_amber_700</color>
+	<color name="button_special_center">@color/material_amber_800</color>
 	<color name="button_special_end">@color/material_amber_900</color>
 
 </resources>
