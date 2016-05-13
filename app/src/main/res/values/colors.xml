@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
 	<color name="material_black">#000000</color>
 	<color name="material_white">#FFFFFF</color>
@@ -11,25 +11,15 @@
 	<color name="material_amber_800">#FF8F00</color>
 	<color name="material_amber_900">#FF6F00</color>
 
-	<color name="material_brown_500">#795548</color>
-	<color name="material_brown_600">#6D4C41</color>
-	<color name="material_brown_700">#5D4037</color>
+	<color name="material_grey_800" tools:override="true">#424242</color>
+	<color name="material_grey_900" tools:override="true">#212121</color>
 
-	<color name="material_grey_300">#E0E0E0</color>
-	<color name="material_grey_400">#BDBDBD</color>
-	<color name="material_grey_500">#9E9E9E</color>
-	<color name="material_grey_600">#757575</color>
-	<color name="material_grey_700">#616161</color>
-	<color name="material_grey_800">#424242</color>
-	<color name="material_grey_900">#212121</color>
-
-	<color name="material_blue_grey_400">#78909C</color>
 	<color name="material_blue_grey_500">#607D8B</color>
 	<color name="material_blue_grey_550">#5A7683</color>
 	<color name="material_blue_grey_600">#546E7A</color>
 	<color name="material_blue_grey_700">#455A64</color>
-	<color name="material_blue_grey_800">#37474F</color>
-	<color name="material_blue_grey_900">#263238</color>
+	<color name="material_blue_grey_800" tools:override="true">#37474F</color>
+	<color name="material_blue_grey_900" tools:override="true">#263238</color>
 
 
 	<color name="color_primary">@color/material_blue_grey_800</color>
