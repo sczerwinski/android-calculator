@@ -1,5 +1,6 @@
 package pl.info.czerwinski.android.calculator
 
+import kotlinx.android.synthetic.main.activity_main.*
 import org.junit.Assert.assertNotNull
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -16,6 +17,6 @@ class MainActivityTest {
 	@Test
 	fun activityShouldBeCreated() {
 		assertNotNull(activity)
-		assertNotNull(activity.lcd)
+		assertNotNull(activity.toolbar)
 	}
 }
