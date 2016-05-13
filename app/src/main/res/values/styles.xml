@@ -27,13 +27,16 @@
 		<item name="android:gravity">right</item>
 	</style>
 
+	<style name="AppTheme.Keypad">
+		<item name="android:paddingLeft">@dimen/button_horizontal_margin</item>
+		<item name="android:paddingRight">@dimen/button_horizontal_margin</item>
+		<item name="android:paddingTop">@dimen/button_vertical_margin</item>
+		<item name="android:paddingBottom">@dimen/button_vertical_margin</item>
+	</style>
+
 	<style name="AppTheme.Button">
 		<item name="android:textSize">@dimen/button_text_size</item>
 		<item name="android:textColor">@color/button_text</item>
-		<item name="android:layout_marginLeft">@dimen/button_horizontal_margin</item>
-		<item name="android:layout_marginRight">@dimen/button_horizontal_margin</item>
-		<item name="android:layout_marginTop">@dimen/button_vertical_margin</item>
-		<item name="android:layout_marginBottom">@dimen/button_vertical_margin</item>
 	</style>
 
 	<style name="AppTheme.Button.Numeric" parent="AppTheme.Button">
