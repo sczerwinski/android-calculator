@@ -16,10 +16,12 @@
 			android:layout_height="wrap_content"
 			style="@style/AppTheme.Lcd"/>
 
-	<include
-			layout="@layout/numeric_keypad"
+	<pl.info.czerwinski.android.calculator.widget.NumericKeypad
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:layout_below="@id/lcd"/>
+			android:layout_below="@id/lcd"
+			app:horizontalPadding="@dimen/button_horizontal_margin"
+			app:verticalPadding="@dimen/button_vertical_margin"
+			style="@style/AppTheme.Keypad"/>
 
 </RelativeLayout>
