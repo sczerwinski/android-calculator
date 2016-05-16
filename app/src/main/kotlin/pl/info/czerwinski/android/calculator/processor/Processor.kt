@@ -2,11 +2,10 @@ package pl.info.czerwinski.android.calculator.processor
 
 object Processor {
 
-	val operations: MutableList<Operation> = mutableListOf(UnaryOperation { it + '0' })
+	val operations: MutableList<Operation> = mutableListOf()
 
 	fun clear() {
 		operations.clear()
-		operations.add(UnaryOperation { it + '0' })
 	}
 
 	override fun toString(): String {
