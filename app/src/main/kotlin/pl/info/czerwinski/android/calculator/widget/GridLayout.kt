@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.ViewGroup
 import pl.info.czerwinski.android.calculator.R
 
-class GridLayout : ViewGroup {
+open class GridLayout : ViewGroup {
 
 	var colsCount = 1
 	var rowsCount = 1
@@ -31,6 +31,7 @@ class GridLayout : ViewGroup {
 				R.styleable.GridLayout_verticalPadding -> paddingVertical = attributes.getDimensionPixelSize(attribute, 0)
 			}
 		}
+		attributes.recycle()
 	}
 
 	override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
