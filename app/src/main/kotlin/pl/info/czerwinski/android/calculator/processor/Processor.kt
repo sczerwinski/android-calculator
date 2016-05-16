@@ -8,6 +8,12 @@ object Processor {
 		operations.clear()
 	}
 
+	fun back() {
+		if (operations.isNotEmpty()) {
+			operations.remove(operations.last())
+		}
+	}
+
 	override fun toString(): String {
 		val builder = StringBuilder()
 		var value: Value = Value("")
