@@ -1,5 +1,9 @@
 package pl.info.czerwinski.android.calculator.processor
 
+import pl.info.czerwinski.android.calculator.processor.operations.BinaryOperation
+import pl.info.czerwinski.android.calculator.processor.operations.Operation
+import pl.info.czerwinski.android.calculator.processor.operations.UnaryOperation
+
 object Processor {
 
 	val operations: MutableList<Operation> = mutableListOf()

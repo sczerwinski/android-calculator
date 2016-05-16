@@ -3,10 +3,7 @@ package pl.info.czerwinski.android.calculator.widget
 import android.support.annotation.LayoutRes
 import android.support.annotation.StringRes
 import pl.info.czerwinski.android.calculator.R
-import pl.info.czerwinski.android.calculator.processor.BinaryOperation
-import pl.info.czerwinski.android.calculator.processor.DummyOperation
-import pl.info.czerwinski.android.calculator.processor.Operation
-import pl.info.czerwinski.android.calculator.processor.UnaryOperation
+import pl.info.czerwinski.android.calculator.processor.operations.*
 
 enum class Key(@StringRes val stringId: Int, val type: KeyType, val operation: Operation) {
 
@@ -31,8 +28,8 @@ enum class Key(@StringRes val stringId: Int, val type: KeyType, val operation: O
 
 	BRACKETS(R.string.button_brackets, KeyType.OPERATION, DummyOperation()),
 
-	CLEAR(R.string.button_clear, KeyType.SPECIAL, DummyOperation()),
-	BACK(R.string.button_back, KeyType.SPECIAL, DummyOperation()),
+	CLEAR(R.string.button_clear, KeyType.SPECIAL, ClearOperation()),
+	BACK(R.string.button_back, KeyType.SPECIAL, BackOperation()),
 
 	EXEC(R.string.button_exec, KeyType.SPECIAL, DummyOperation()),
 }
