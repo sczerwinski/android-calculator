@@ -23,5 +23,5 @@ data class Value(val text: String) {
 
 	fun toDouble() = text.toDouble()
 
-	override fun toString() = if (text.isEmpty()) "0" else text
+	override fun toString() = if (text.isEmpty()) "0" else text.replace('-', '\u2212')
 }

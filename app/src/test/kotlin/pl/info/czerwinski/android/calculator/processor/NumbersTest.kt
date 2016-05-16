@@ -18,7 +18,8 @@ class FloatIsIntTest(val value: Float, val expectedResult: Boolean) {
 				arrayOf(-1f, true),
 				arrayOf(.1f, false),
 				arrayOf(-.1f, false),
-				arrayOf(1.1f, false)
+				arrayOf(1.1f, false),
+				arrayOf(Float.POSITIVE_INFINITY, false)
 		)
 	}
 
@@ -41,7 +42,8 @@ class DoubleIsLongTest(val value: Double, val expectedResult: Boolean) {
 				arrayOf(-1.0, true),
 				arrayOf(.1, false),
 				arrayOf(-.1, false),
-				arrayOf(1.1, false)
+				arrayOf(1.1, false),
+				arrayOf(Double.NEGATIVE_INFINITY, false)
 		)
 	}
 

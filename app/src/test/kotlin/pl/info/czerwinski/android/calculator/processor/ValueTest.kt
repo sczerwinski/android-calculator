@@ -56,6 +56,19 @@ class ValueConstructorTest {
 		val value = Value(v)
 		assertEquals("123.4", value.text)
 	}
+
+	@Test
+	fun testToString() {
+		val text = "-123.4"
+		val value = Value(text)
+		assertEquals("\u2212123.4", value.toString())
+	}
+
+	@Test
+	fun testToStringEmpty() {
+		val value = Value("")
+		assertEquals("0", value.toString())
+	}
 }
 
 @RunWith(Parameterized::class)
