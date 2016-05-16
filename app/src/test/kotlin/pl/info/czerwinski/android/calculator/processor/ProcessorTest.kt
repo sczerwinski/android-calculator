@@ -17,7 +17,7 @@ class ProcessorToStringTest {
 		listOf(Key.NUM_1, Key.NUM_2, Key.DECIMAL_POINT, Key.NUM_5)
 				.map { it -> it.operation }
 				.map { it.push() }
-		assertEquals("12.5", Processor.toString());
+		assertEquals("12.5", Processor.toString())
 	}
 
 	@Test
@@ -25,6 +25,6 @@ class ProcessorToStringTest {
 		listOf(Key.NUM_1, Key.NUM_2, Key.DECIMAL_POINT, Key.NUM_5, Key.PLUS, Key.NUM_5, Key.NUM_2, Key.DIV, Key.NUM_2)
 				.map { it -> it.operation }
 				.map { it.push() }
-		assertEquals("12.5+52\u00F72", Processor.toString());
+		assertEquals("12.5+52\u00F72", Processor.toString())
 	}
 }

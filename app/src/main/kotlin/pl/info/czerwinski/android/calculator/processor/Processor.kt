@@ -21,6 +21,6 @@ object Processor {
 			}
 		}
 		builder.append(value)
-		return builder.toString();
+		return builder.toString()
 	}
 }
