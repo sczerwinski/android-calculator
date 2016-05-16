@@ -43,7 +43,7 @@ class GridLayout : ViewGroup {
 		val layoutLeft = (measuredWidth - childWidth * colsCount - innerPaddingsWidth) / 2
 		val layoutTop = (measuredHeight - childHeight * rowsCount - innerPaddingsHeight) / 2
 
-		for (index in 0..childCount - 1) {
+		for ((index, child) in (0..childCount - 1).map { Pair(it, getChildAt(it)) }) {
 			val x = index % colsCount
 			val y = index / colsCount
 
@@ -51,8 +51,6 @@ class GridLayout : ViewGroup {
 			val childRight = childLeft + childWidth
 			val childTop = layoutTop + y * (childHeight + paddingVertical)
 			val childBottom = childTop + childHeight
-
-			val child = getChildAt(index)
 
 			child.measure(exactMeasureSpec(childWidth), exactMeasureSpec(childHeight))
 			child.layout(childLeft, childTop, childRight, childBottom)
