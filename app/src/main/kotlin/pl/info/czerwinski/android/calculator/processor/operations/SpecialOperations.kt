@@ -16,6 +16,6 @@ class ClearOperation : Operation {
 
 class ExecOperation : Operation {
 	override fun push() {
-		Processor.calculate();
+		Processor.calculate()
 	}
 }
