@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/sczerwinski/android-calculator.svg?branch=master)](https://travis-ci.org/sczerwinski/android-calculator)
 [![Code Coverage](https://codecov.io/github/sczerwinski/android-calculator/coverage.svg?branch=master)](https://codecov.io/github/sczerwinski/android-calculator?branch=master)
+[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Android Calculator
 
