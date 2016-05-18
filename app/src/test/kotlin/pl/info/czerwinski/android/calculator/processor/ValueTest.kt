@@ -6,7 +6,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
-class ValueConstructorTest {
+class ValueTest {
 
 	@Test
 	fun testFromString() {
@@ -55,6 +55,14 @@ class ValueConstructorTest {
 		val v = 123.4
 		val value = Value(v)
 		assertEquals("123.4", value.text)
+	}
+
+	@Test
+	fun testToOperator() {
+		val value = Value(-123.45)
+		val operation = value.toOperation()
+		val result = operation(Value(1))
+		assertEquals("-123.45", result.text)
 	}
 
 	@Test
