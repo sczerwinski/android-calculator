@@ -1,5 +1,7 @@
 package pl.info.czerwinski.android.calculator.processor
 
+import pl.info.czerwinski.android.calculator.processor.operations.UnaryOperation
+
 data class Value(val text: String) {
 
 	constructor(int: Int) : this(int.toString())
@@ -20,6 +22,8 @@ data class Value(val text: String) {
 	operator fun minus(value: Value) = Value(toDouble() - value.toDouble())
 	operator fun times(value: Value) = Value(toDouble() * value.toDouble())
 	operator fun div(value: Value) = Value(toDouble() / value.toDouble())
+
+	fun toOperation() = UnaryOperation { it -> this }
 
 	fun toDouble() = text.toDouble()
 
