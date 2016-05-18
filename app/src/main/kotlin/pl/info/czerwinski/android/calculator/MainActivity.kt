@@ -12,8 +12,13 @@ class MainActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
 		setSupportActionBar(toolbar)
+		updateLCD()
 		numeric_keypad?.onStateChanged = {
-			lcd.text = Processor.toString()
+			updateLCD()
 		}
+	}
+
+	private fun updateLCD() {
+		lcd.text = Processor.toString()
 	}
 }
