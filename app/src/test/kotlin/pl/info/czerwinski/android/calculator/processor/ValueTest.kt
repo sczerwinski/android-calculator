@@ -92,7 +92,7 @@ class ValuePlusDigitTest(val value: Value, val digit: Char, val expectedResult: 
 	}
 
 	@Test
-	fun testPlus() {
+	fun testPlusDigit() {
 		val result = value + digit
 		assertEquals(expectedResult, result)
 	}
@@ -115,7 +115,7 @@ class ValueUnaryMinusTest(val value: Value, val expectedResult: Value) {
 	}
 
 	@Test
-	fun testPlus() {
+	fun testUnaryMinus() {
 		val result = -value
 		assertEquals(expectedResult, result)
 	}
@@ -157,7 +157,7 @@ class ValueMinusTest(val v1: Value, val v2: Value, val expectedResult: Value) {
 	}
 
 	@Test
-	fun testPlus() {
+	fun testMinus() {
 		val result = v1 - v2
 		assertEquals(expectedResult, result)
 	}
@@ -180,7 +180,7 @@ class ValueTimesTest(val v1: Value, val v2: Value, val expectedResult: Value) {
 	}
 
 	@Test
-	fun testPlus() {
+	fun testTimes() {
 		val result = v1 * v2
 		assertEquals(expectedResult, result)
 	}
@@ -204,7 +204,7 @@ class ValueDivTest(val v1: Value, val v2: Value, val expectedResult: Value) {
 	}
 
 	@Test
-	fun testPlus() {
+	fun testDiv() {
 		val result = v1 / v2
 		assertEquals(expectedResult, result)
 	}
