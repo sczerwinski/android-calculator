@@ -66,6 +66,19 @@ class ValueTest {
 	}
 
 	@Test
+	fun testToDouble() {
+		val text = "-123.4"
+		val value = Value(text)
+		assertEquals(-123.4, value.toDouble(), 0.000000001)
+	}
+
+	@Test
+	fun testToDoubleEmpty() {
+		val value = Value("")
+		assertEquals(0.0, value.toDouble(), 0.000000001)
+	}
+
+	@Test
 	fun testToString() {
 		val text = "-123.4"
 		val value = Value(text)
