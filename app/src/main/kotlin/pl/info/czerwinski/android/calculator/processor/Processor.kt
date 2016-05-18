@@ -14,13 +14,40 @@ object Processor {
 
 	fun back() {
 		if (operations.isNotEmpty()) {
-			operations.remove(operations.last())
+			operations.removeAt(operations.lastIndex)
 		}
+	}
+
+	fun calculate() {
+		val values = mutableListOf<Value>()
+		val binaryOperations = mutableListOf<BinaryOperation>()
+
+		var value = Value("")
+		for (operation in operations) {
+			when (operation) {
+				is UnaryOperation -> value = operation(value)
+				is BinaryOperation -> {
+					values.add(value)
+					value = Value("")
+					binaryOperations.add(operation)
+				}
+			}
+		}
+		values.add(value)
+
+		binaryOperations.add(BinaryOperation("=") { x, y -> x })
+
+		clear()
+		operations.add(values
+				.zip(binaryOperations)
+				.reduce { total, next -> Pair(total.second(total.first, next.first), next.second) }
+				.first
+				.toOperation())
 	}
 
 	override fun toString(): String {
 		val builder = StringBuilder()
-		var value: Value = Value("")
+		var value = Value("")
 		for (operation in operations) {
 			when (operation) {
 				is UnaryOperation -> value = operation(value)

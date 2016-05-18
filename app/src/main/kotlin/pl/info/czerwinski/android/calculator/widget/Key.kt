@@ -31,7 +31,7 @@ enum class Key(@StringRes val stringId: Int, val type: KeyType, val operation: O
 	CLEAR(R.string.button_clear, KeyType.SPECIAL, ClearOperation()),
 	BACK(R.string.button_back, KeyType.SPECIAL, BackOperation()),
 
-	EXEC(R.string.button_exec, KeyType.SPECIAL, DummyOperation()),
+	EXEC(R.string.button_exec, KeyType.SPECIAL, ExecOperation()),
 }
 
 enum class KeyType(@LayoutRes val layoutId: Int) {
