@@ -2,6 +2,7 @@ package pl.info.czerwinski.android.calculator.widget
 
 import android.content.Context
 import android.util.AttributeSet
+import pl.info.czerwinski.android.calculator.keys.Key
 
 class NumericKeypad : Keypad {
 

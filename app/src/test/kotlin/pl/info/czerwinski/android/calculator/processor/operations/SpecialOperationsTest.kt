@@ -2,8 +2,8 @@ package pl.info.czerwinski.android.calculator.processor.operations
 
 import org.junit.Before
 import org.junit.Test
+import pl.info.czerwinski.android.calculator.keys.Key
 import pl.info.czerwinski.android.calculator.processor.Processor
-import pl.info.czerwinski.android.calculator.widget.Key
 import kotlin.test.expect
 
 class SpecialOperationsTest {

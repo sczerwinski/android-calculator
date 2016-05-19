@@ -4,7 +4,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
-import pl.info.czerwinski.android.calculator.widget.Key
+import pl.info.czerwinski.android.calculator.keys.Key
 import kotlin.test.expect
 
 @RunWith(Parameterized::class)

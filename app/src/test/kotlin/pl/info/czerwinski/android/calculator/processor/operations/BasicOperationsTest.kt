@@ -3,9 +3,9 @@ package pl.info.czerwinski.android.calculator.processor.operations
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
+import pl.info.czerwinski.android.calculator.keys.Key
 import pl.info.czerwinski.android.calculator.processor.Processor
 import pl.info.czerwinski.android.calculator.processor.Value
-import pl.info.czerwinski.android.calculator.widget.Key
 import kotlin.test.assertTrue
 import kotlin.test.expect
 

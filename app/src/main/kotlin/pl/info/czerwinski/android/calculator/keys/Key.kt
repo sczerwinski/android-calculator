@@ -1,4 +1,4 @@
-package pl.info.czerwinski.android.calculator.widget
+package pl.info.czerwinski.android.calculator.keys
 
 import android.support.annotation.LayoutRes
 import android.support.annotation.StringRes

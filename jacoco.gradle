@@ -43,14 +43,8 @@ project.afterEvaluate {
 						excludes: [
 
 								// Exclude UI components:
-								'**/*Activity.class',
-								'**/*Activity$*.class',
-								'**/*Layout.class',
-								'**/*Layout$*.class',
-								'**/Keypad.class',
-								'**/Keypad$*.class',
-								'**/*Keypad.class',
-								'**/*Keypad$*.class',
+								'pl/info/czerwinski/android/calculator/widget/**/*.class',
+								'pl/info/czerwinski/android/calculator/*.class',
 
 								'**/R.class',
 								'**/R$*.class',
