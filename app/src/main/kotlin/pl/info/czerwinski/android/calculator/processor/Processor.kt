@@ -22,13 +22,13 @@ object Processor {
 		val values = mutableListOf<Value>()
 		val binaryOperations = mutableListOf<BinaryOperation>()
 
-		var value = Value("")
+		var value = Value.EMPTY
 		for (operation in operations) {
 			when (operation) {
 				is UnaryOperation -> value = operation(value)
 				is BinaryOperation -> {
 					values.add(value)
-					value = Value("")
+					value = Value.EMPTY
 					binaryOperations.add(operation)
 				}
 			}
@@ -47,13 +47,13 @@ object Processor {
 
 	override fun toString(): String {
 		val builder = StringBuilder()
-		var value = Value("")
+		var value = Value.EMPTY
 		for (operation in operations) {
 			when (operation) {
 				is UnaryOperation -> value = operation(value)
 				is BinaryOperation -> {
 					builder.append(value).append(operation.symbol)
-					value = Value("")
+					value = Value.EMPTY
 				}
 			}
 		}

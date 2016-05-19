@@ -1,94 +1,70 @@
 package pl.info.czerwinski.android.calculator.processor
 
-import org.junit.Assert.assertEquals
-
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
+import kotlin.test.expect
 
 class ValueTest {
 
 	@Test
 	fun testFromString() {
-		val text = "123"
-		val value = Value(text)
-		assertEquals("123", value.text)
+		expect("123") { Value("123").text }
 	}
 
 	@Test
 	fun testFromInt() {
-		val v = 123
-		val value = Value(v)
-		assertEquals("123", value.text)
+		expect("123") { Value(123).text }
 	}
 
 	@Test
 	fun testFromLong() {
-		val v = 123L
-		val value = Value(v)
-		assertEquals("123", value.text)
+		expect("123") { Value(123L).text }
 	}
 
 	@Test
 	fun testFromFloat() {
-		val v = 123.0f
-		val value = Value(v)
-		assertEquals("123", value.text)
+		expect("123") { Value(123.0f).text }
 	}
 
 	@Test
 	fun testFromDouble() {
-		val v = 123.0
-		val value = Value(v)
-		assertEquals("123", value.text)
+		expect("123") { Value(123.0).text }
 	}
 
 	@Test
 	fun testFromFloatFractional() {
-		val v = 123.4f
-		val value = Value(v)
-		assertEquals("123.4", value.text)
+		expect("123.4") { Value(123.4f).text }
 	}
 
 	@Test
 	fun testFromDoubleFractional() {
-		val v = 123.4
-		val value = Value(v)
-		assertEquals("123.4", value.text)
+		expect("123.4") { Value(123.4).text }
 	}
 
 	@Test
 	fun testToOperator() {
-		val value = Value(-123.45)
-		val operation = value.toOperation()
-		val result = operation(Value(1))
-		assertEquals("-123.45", result.text)
+		expect("-123.45") { Value(-123.45).toOperation()(Value(1)).text }
 	}
 
 	@Test
 	fun testToDouble() {
-		val text = "-123.4"
-		val value = Value(text)
-		assertEquals(-123.4, value.toDouble(), 0.000000001)
+		expect(-123.4) { Value("-123.4").toDouble() }
 	}
 
 	@Test
 	fun testToDoubleEmpty() {
-		val value = Value("")
-		assertEquals(0.0, value.toDouble(), 0.000000001)
+		expect(0.0) { Value.EMPTY.toDouble() }
 	}
 
 	@Test
 	fun testToString() {
-		val text = "-123.4"
-		val value = Value(text)
-		assertEquals("\u2212123.4", value.toString())
+		expect("\u2212123.4") { Value("-123.4").toString() }
 	}
 
 	@Test
 	fun testToStringEmpty() {
-		val value = Value("")
-		assertEquals("0", value.toString())
+		expect("0") { Value.EMPTY.toString() }
 	}
 }
 
@@ -114,8 +90,7 @@ class ValuePlusDigitTest(val value: Value, val digit: Char, val expectedResult: 
 
 	@Test
 	fun testPlusDigit() {
-		val result = value + digit
-		assertEquals(expectedResult, result)
+		expect(expectedResult) { value + digit }
 	}
 }
 
@@ -137,8 +112,7 @@ class ValueUnaryMinusTest(val value: Value, val expectedResult: Value) {
 
 	@Test
 	fun testUnaryMinus() {
-		val result = -value
-		assertEquals(expectedResult, result)
+		expect(expectedResult) { -value }
 	}
 }
 
@@ -158,8 +132,7 @@ class ValuePlusTest(val v1: Value, val v2: Value, val expectedResult: Value) {
 
 	@Test
 	fun testPlus() {
-		val result = v1 + v2
-		assertEquals(expectedResult, result)
+		expect(expectedResult) { v1 + v2 }
 	}
 }
 
@@ -179,8 +152,7 @@ class ValueMinusTest(val v1: Value, val v2: Value, val expectedResult: Value) {
 
 	@Test
 	fun testMinus() {
-		val result = v1 - v2
-		assertEquals(expectedResult, result)
+		expect(expectedResult) { v1 - v2 }
 	}
 }
 
@@ -202,8 +174,7 @@ class ValueTimesTest(val v1: Value, val v2: Value, val expectedResult: Value) {
 
 	@Test
 	fun testTimes() {
-		val result = v1 * v2
-		assertEquals(expectedResult, result)
+		expect(expectedResult) { v1 * v2 }
 	}
 }
 
@@ -226,7 +197,6 @@ class ValueDivTest(val v1: Value, val v2: Value, val expectedResult: Value) {
 
 	@Test
 	fun testDiv() {
-		val result = v1 / v2
-		assertEquals(expectedResult, result)
+		expect(expectedResult) { v1 / v2 }
 	}
 }

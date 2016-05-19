@@ -1,9 +1,9 @@
 package pl.info.czerwinski.android.calculator.processor
 
-import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import pl.info.czerwinski.android.calculator.widget.Key
+import kotlin.test.expect
 
 class ProcessorToStringTest {
 
@@ -17,7 +17,7 @@ class ProcessorToStringTest {
 		listOf(Key.NUM_1, Key.NUM_2, Key.DECIMAL_POINT, Key.NUM_5)
 				.map { it -> it.operation }
 				.map { it.push() }
-		assertEquals("12.5", Processor.toString())
+		expect("12.5") { Processor.toString() }
 	}
 
 	@Test
@@ -25,6 +25,6 @@ class ProcessorToStringTest {
 		listOf(Key.NUM_1, Key.NUM_2, Key.DECIMAL_POINT, Key.NUM_5, Key.PLUS, Key.NUM_5, Key.NUM_2, Key.DIV, Key.NUM_2)
 				.map { it -> it.operation }
 				.map { it.push() }
-		assertEquals("12.5+52\u00F72", Processor.toString())
+		expect("12.5+52\u00F72") { Processor.toString() }
 	}
 }

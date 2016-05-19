@@ -1,9 +1,9 @@
 package pl.info.czerwinski.android.calculator.processor
 
-import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
+import kotlin.test.expect
 
 @RunWith(Parameterized::class)
 class FloatIsIntTest(val value: Float, val expectedResult: Boolean) {
@@ -25,7 +25,7 @@ class FloatIsIntTest(val value: Float, val expectedResult: Boolean) {
 
 	@Test
 	fun testIsInt() {
-		Assert.assertEquals(expectedResult, value.isInt())
+		expect(expectedResult) { value.isInt() }
 	}
 }
 
@@ -49,6 +49,6 @@ class DoubleIsLongTest(val value: Double, val expectedResult: Boolean) {
 
 	@Test
 	fun testIsLong() {
-		Assert.assertEquals(expectedResult, value.isLong())
+		expect(expectedResult) { value.isLong() }
 	}
 }

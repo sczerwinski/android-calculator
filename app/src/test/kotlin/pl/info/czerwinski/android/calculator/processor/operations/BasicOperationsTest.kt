@@ -1,14 +1,13 @@
 package pl.info.czerwinski.android.calculator.processor.operations
 
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
-
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import pl.info.czerwinski.android.calculator.processor.Processor
 import pl.info.czerwinski.android.calculator.processor.Value
 import pl.info.czerwinski.android.calculator.widget.Key
+import kotlin.test.assertTrue
+import kotlin.test.expect
 
 @RunWith(Parameterized::class)
 class UnaryOperationTest(val value: Value, val key: Key, val expectedResult: Value) {
@@ -26,7 +25,7 @@ class UnaryOperationTest(val value: Value, val key: Key, val expectedResult: Val
 
 	@Test
 	fun testOperation() {
-		assertEquals(expectedResult, (key.operation as UnaryOperation)(value))
+		expect(expectedResult) { (key.operation as UnaryOperation)(value) }
 	}
 }
 
@@ -46,7 +45,7 @@ class BinaryOperationTest(val x: Value, val y: Value, val key: Key, val expected
 
 	@Test
 	fun testOperation() {
-		assertEquals(expectedResult, (key.operation as BinaryOperation)(x, y))
+		expect(expectedResult) { (key.operation as BinaryOperation)(x, y) }
 	}
 }
 
@@ -56,9 +55,9 @@ class QueuedOperationTest {
 	fun testPushUnaryOperation() {
 		Processor.clear()
 		Key.NUM_2.operation.push()
-		assertEquals(1, Processor.operations.size)
-		assertTrue(Processor.operations[0] is UnaryOperation)
-		assertEquals("2", Processor.toString())
+		expect(1) { Processor.operations.size }
+		assertTrue { Processor.operations[0] is UnaryOperation }
+		expect("2") { Processor.toString() }
 	}
 
 	@Test
@@ -66,9 +65,9 @@ class QueuedOperationTest {
 		Processor.clear()
 		Key.NUM_2.operation.push()
 		Key.PLUS.operation.push()
-		assertEquals(2, Processor.operations.size)
-		assertTrue(Processor.operations[0] is UnaryOperation)
-		assertTrue(Processor.operations[1] is BinaryOperation)
-		assertEquals("2+0", Processor.toString())
+		expect(2) { Processor.operations.size }
+		assertTrue { Processor.operations[0] is UnaryOperation }
+		assertTrue { Processor.operations[1] is BinaryOperation }
+		expect("2+0") { Processor.toString() }
 	}
 }

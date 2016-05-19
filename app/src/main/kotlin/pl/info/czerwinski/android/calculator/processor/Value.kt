@@ -4,6 +4,10 @@ import pl.info.czerwinski.android.calculator.processor.operations.UnaryOperation
 
 data class Value(val text: String) {
 
+	companion object {
+		val EMPTY = Value("")
+	}
+
 	constructor(int: Int) : this(int.toString())
 	constructor(long: Long) : this(long.toString())
 	constructor(float: Float) : this(if (float.isInt()) float.toInt().toString() else float.toString())
