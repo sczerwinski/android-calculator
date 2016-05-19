@@ -15,5 +15,8 @@ class UnaryOperation(val operation: (Value) -> Value) : QueuedOperation() {
 
 
 class BinaryOperation(val symbol: String, val precedence: Int, val operation: (Value, Value) -> Value) : QueuedOperation() {
+
 	operator fun invoke(v1: Value, v2: Value) = operation(v1, v2)
+
+	override fun toString() = symbol
 }

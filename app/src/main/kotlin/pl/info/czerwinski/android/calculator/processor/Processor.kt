@@ -19,26 +19,18 @@ object Processor {
 	}
 
 	fun calculate() {
-		val values = mutableListOf<Value>()
-		val binaryOperations = mutableListOf<BinaryOperation>()
-
-		var value = Value.EMPTY
-		for (operation in operations) {
-			when (operation) {
-				is UnaryOperation -> value = operation(value)
-				is BinaryOperation -> {
-					values.add(value)
-					value = Value.EMPTY
-					binaryOperations.add(operation)
+		var calculationChain = operations
+				.fold(Pair(listOf(Value.EMPTY), emptyList<BinaryOperation>())) { lists, next ->
+					when (next) {
+						is UnaryOperation -> Pair(lists.first.dropLast(1) + next(lists.first.last()), lists.second)
+						is BinaryOperation -> Pair(lists.first + Value.EMPTY, lists.second + next)
+						else -> lists
+					}
 				}
-			}
-		}
-		values.add(value)
-
-		binaryOperations.add(BinaryOperation("=", -1) { x, y -> x })
-
+				.let {
+					it.first.zip(it.second + BinaryOperation("=", -1) { x, y -> x })
+				}
 		clear()
-		var calculationChain = values.zip(binaryOperations)
 		var precedence = 0
 		while (calculationChain.size > 1) {
 			calculationChain = calculationChain.drop(1).fold(calculationChain.take(1)) { chain, next ->
@@ -54,17 +46,13 @@ object Processor {
 
 	override fun toString(): String {
 		val builder = StringBuilder()
-		var value = Value.EMPTY
-		for (operation in operations) {
-			when (operation) {
-				is UnaryOperation -> value = operation(value)
-				is BinaryOperation -> {
-					builder.append(value).append(operation.symbol)
-					value = Value.EMPTY
-				}
+		operations.fold(listOf<Any>(Value.EMPTY)) { list, next ->
+			when (next) {
+				is UnaryOperation -> list.dropLast(1) + next(list.last() as Value)
+				is BinaryOperation -> list + next + Value.EMPTY
+				else -> list
 			}
-		}
-		builder.append(value)
+		}.map { builder.append(it) }
 		return builder.toString()
 	}
 }
