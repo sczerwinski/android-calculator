@@ -35,14 +35,21 @@ object Processor {
 		}
 		values.add(value)
 
-		binaryOperations.add(BinaryOperation("=") { x, y -> x })
+		binaryOperations.add(BinaryOperation("=", -1) { x, y -> x })
 
 		clear()
-		operations.add(values
-				.zip(binaryOperations)
-				.reduce { total, next -> Pair(total.second(total.first, next.first), next.second) }
-				.first
-				.toOperation())
+		var calculationChain = values.zip(binaryOperations)
+		var precedence = 0
+		while (calculationChain.size > 1) {
+			calculationChain = calculationChain.drop(1).fold(calculationChain.take(1)) { chain, next ->
+				if (chain.last().second.precedence == precedence)
+					chain.dropLast(1) + Pair(chain.last().second(chain.last().first, next.first), next.second)
+				else
+					chain + next
+			}
+			precedence++
+		}
+		operations.add(calculationChain.first().first.toOperation())
 	}
 
 	override fun toString(): String {

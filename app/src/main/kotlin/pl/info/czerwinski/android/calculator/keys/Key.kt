@@ -21,10 +21,10 @@ enum class Key(@StringRes val stringId: Int, val type: KeyType, val operation: O
 	DECIMAL_POINT(R.string.button_decimal, KeyType.NUMERIC, UnaryOperation { it + '.' }),
 	PLUS_MINUS(R.string.button_plus_minus, KeyType.NUMERIC, UnaryOperation { -it }),
 
-	PLUS(R.string.button_plus, KeyType.OPERATION, BinaryOperation("+") { x, y -> x + y }),
-	MINUS(R.string.button_minus, KeyType.OPERATION, BinaryOperation("\u2212") { x, y -> x - y }),
-	TIMES(R.string.button_times, KeyType.OPERATION, BinaryOperation("\u00D7") { x, y -> x * y }),
-	DIV(R.string.button_div, KeyType.OPERATION, BinaryOperation("\u00F7") { x, y -> x / y }),
+	PLUS(R.string.button_plus, KeyType.OPERATION, BinaryOperation("+", 2) { x, y -> x + y }),
+	MINUS(R.string.button_minus, KeyType.OPERATION, BinaryOperation("\u2212", 2) { x, y -> x - y }),
+	TIMES(R.string.button_times, KeyType.OPERATION, BinaryOperation("\u00D7", 1) { x, y -> x * y }),
+	DIV(R.string.button_div, KeyType.OPERATION, BinaryOperation("\u00F7", 1) { x, y -> x / y }),
 
 	BRACKETS(R.string.button_brackets, KeyType.OPERATION, DummyOperation()),
 

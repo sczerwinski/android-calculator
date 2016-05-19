@@ -20,6 +20,10 @@ class ProcessorOutputTest(val keys: List<Key>, val expectedOutput: String) {
 				arrayOf(listOf(Key.BACK), "0"),
 				arrayOf(listOf(Key.NUM_1, Key.NUM_2, Key.DECIMAL_POINT, Key.NUM_5, Key.CLEAR), "0"),
 				arrayOf(listOf(Key.NUM_2, Key.PLUS, Key.NUM_2, Key.EXEC), "4"),
+				arrayOf(listOf(Key.NUM_2, Key.PLUS, Key.NUM_2, Key.TIMES, Key.NUM_2, Key.EXEC), "6"),
+				arrayOf(listOf(Key.NUM_2, Key.TIMES, Key.NUM_2, Key.PLUS, Key.NUM_2, Key.EXEC), "6"),
+				arrayOf(listOf(Key.NUM_8, Key.MINUS, Key.NUM_2, Key.DIV, Key.NUM_2, Key.EXEC), "7"),
+				arrayOf(listOf(Key.NUM_8, Key.DIV, Key.NUM_2, Key.MINUS, Key.NUM_2, Key.EXEC), "2"),
 				arrayOf(listOf<Key>(), "0")
 		)
 	}
