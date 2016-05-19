@@ -38,10 +38,20 @@ project.afterEvaluate {
 
 				group = "Reporting"
 				description = "Generate Jacoco coverage reports on the ${sourceName.capitalize()} build."
-
 				classDirectories = fileTree(
 						dir: "${project.buildDir}/intermediates/classes/${sourcePath}",
 						excludes: [
+
+								// Exclude UI components:
+								'**/*Activity.class',
+								'**/*Activity$*.class',
+								'**/*Layout.class',
+								'**/*Layout$*.class',
+								'**/Keypad.class',
+								'**/Keypad$*.class',
+								'**/*Keypad.class',
+								'**/*Keypad$*.class',
+
 								'**/R.class',
 								'**/R$*.class',
 								'**/*$ViewInjector*.*',
@@ -50,6 +60,7 @@ project.afterEvaluate {
 								'**/Manifest*.*'
 						]
 				)
+
 
 				def coverageSourceDirs = [
 						"src/main/java",
