@@ -27,7 +27,7 @@ data class Value(val text: String) {
 	operator fun times(value: Value) = Value(toDouble() * value.toDouble())
 	operator fun div(value: Value) = Value(toDouble() / value.toDouble())
 
-	fun toOperation() = UnaryOperation { it -> this }
+	fun toOperation() = UnaryOperation { this }
 
 	fun toDouble() = if (text.isEmpty()) 0.0 else text.toDouble()
 
