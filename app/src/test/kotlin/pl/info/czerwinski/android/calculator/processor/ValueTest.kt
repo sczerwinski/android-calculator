@@ -106,7 +106,9 @@ class ValueUnaryMinusTest(val value: Value, val expectedResult: Value) {
 				arrayOf(Value("-2"), Value("2")),
 				arrayOf(Value("-3.5"), Value("3.5")),
 				arrayOf(Value("725."), Value("-725.")),
-				arrayOf(Value("-54."), Value("54."))
+				arrayOf(Value("-54."), Value("54.")),
+				arrayOf(Value("0"), Value("-0")),
+				arrayOf(Value(""), Value("-"))
 		)
 	}
 
