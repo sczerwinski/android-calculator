@@ -7,18 +7,18 @@ import pl.info.czerwinski.android.calculator.processor.operations.*
 
 enum class Key(@StringRes val stringId: Int, val type: KeyType, val operation: Operation) {
 
-	NUM_0(R.string.button_0, KeyType.NUMERIC, UnaryOperation { it + '0' }),
-	NUM_1(R.string.button_1, KeyType.NUMERIC, UnaryOperation { it + '1' }),
-	NUM_2(R.string.button_2, KeyType.NUMERIC, UnaryOperation { it + '2' }),
-	NUM_3(R.string.button_3, KeyType.NUMERIC, UnaryOperation { it + '3' }),
-	NUM_4(R.string.button_4, KeyType.NUMERIC, UnaryOperation { it + '4' }),
-	NUM_5(R.string.button_5, KeyType.NUMERIC, UnaryOperation { it + '5' }),
-	NUM_6(R.string.button_6, KeyType.NUMERIC, UnaryOperation { it + '6' }),
-	NUM_7(R.string.button_7, KeyType.NUMERIC, UnaryOperation { it + '7' }),
-	NUM_8(R.string.button_8, KeyType.NUMERIC, UnaryOperation { it + '8' }),
-	NUM_9(R.string.button_9, KeyType.NUMERIC, UnaryOperation { it + '9' }),
+	NUM_0(R.string.button_0, KeyType.NUMERIC, appendCharOperation('0')),
+	NUM_1(R.string.button_1, KeyType.NUMERIC, appendCharOperation('1')),
+	NUM_2(R.string.button_2, KeyType.NUMERIC, appendCharOperation('2')),
+	NUM_3(R.string.button_3, KeyType.NUMERIC, appendCharOperation('3')),
+	NUM_4(R.string.button_4, KeyType.NUMERIC, appendCharOperation('4')),
+	NUM_5(R.string.button_5, KeyType.NUMERIC, appendCharOperation('5')),
+	NUM_6(R.string.button_6, KeyType.NUMERIC, appendCharOperation('6')),
+	NUM_7(R.string.button_7, KeyType.NUMERIC, appendCharOperation('7')),
+	NUM_8(R.string.button_8, KeyType.NUMERIC, appendCharOperation('8')),
+	NUM_9(R.string.button_9, KeyType.NUMERIC, appendCharOperation('9')),
 
-	DECIMAL_POINT(R.string.button_decimal, KeyType.NUMERIC, UnaryOperation { it + '.' }),
+	DECIMAL_POINT(R.string.button_decimal, KeyType.NUMERIC, appendCharOperation('.')),
 	PLUS_MINUS(R.string.button_plus_minus, KeyType.NUMERIC, UnaryOperation { -it }),
 
 	PLUS(R.string.button_plus, KeyType.OPERATION, BinaryOperation("+", 2) { x, y -> x + y }),

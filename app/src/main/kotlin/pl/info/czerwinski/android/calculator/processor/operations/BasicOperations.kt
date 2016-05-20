@@ -20,3 +20,5 @@ class BinaryOperation(val symbol: String, val precedence: Int, val operation: (V
 
 	override fun toString() = symbol
 }
+
+fun appendCharOperation(char: Char) = UnaryOperation { it + char }
