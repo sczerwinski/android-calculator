@@ -24,6 +24,8 @@ class ProcessorOutputTest(val keys: List<Key>, val expectedOutput: String) {
 				arrayOf(listOf(Key.NUM_2, Key.TIMES, Key.NUM_2, Key.PLUS, Key.NUM_2, Key.EXEC), "6"),
 				arrayOf(listOf(Key.NUM_8, Key.MINUS, Key.NUM_2, Key.DIV, Key.NUM_2, Key.EXEC), "7"),
 				arrayOf(listOf(Key.NUM_8, Key.DIV, Key.NUM_2, Key.MINUS, Key.NUM_2, Key.EXEC), "2"),
+				arrayOf(listOf(Key.NUM_2, Key.MINUS, Key.PLUS, Key.NUM_2), "2+2"),
+				arrayOf(listOf(Key.NUM_2, Key.TIMES, Key.DIV, Key.MINUS, Key.PLUS, Key.NUM_2), "2+2"),
 				arrayOf(listOf<Key>(), "0")
 		)
 	}

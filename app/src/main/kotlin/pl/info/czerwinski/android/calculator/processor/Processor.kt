@@ -6,11 +6,27 @@ import pl.info.czerwinski.android.calculator.processor.operations.UnaryOperation
 
 object Processor {
 
-	val operations: MutableList<Operation> = mutableListOf()
+	private val operations: MutableList<Operation> = mutableListOf()
+
+	operator fun get(index: Int) = operations.get(index)
+
+	fun push(operation: Operation) {
+		when (operation) {
+			is UnaryOperation -> operations.add(operation)
+			is BinaryOperation -> {
+				if (operations.last() is BinaryOperation) {
+					operations.removeAt(operations.lastIndex)
+				}
+				operations.add(operation)
+			}
+		}
+	}
 
 	fun clear() {
 		operations.clear()
 	}
+
+	fun size() = operations.size
 
 	fun back() {
 		if (operations.isNotEmpty()) {

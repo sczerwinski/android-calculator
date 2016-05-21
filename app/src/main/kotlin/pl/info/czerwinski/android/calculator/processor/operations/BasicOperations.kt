@@ -5,7 +5,7 @@ import pl.info.czerwinski.android.calculator.processor.Value
 
 abstract class QueuedOperation : Operation {
 	override fun push() {
-		Processor.operations.add(this)
+		Processor.push(this)
 	}
 }
 

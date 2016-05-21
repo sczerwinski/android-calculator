@@ -55,8 +55,8 @@ class QueuedOperationTest {
 	fun testPushUnaryOperation() {
 		Processor.clear()
 		Key.NUM_2.operation.push()
-		expect(1) { Processor.operations.size }
-		assertTrue { Processor.operations[0] is UnaryOperation }
+		expect(1) { Processor.size() }
+		assertTrue { Processor[0] is UnaryOperation }
 		expect("2") { Processor.toString() }
 	}
 
@@ -65,9 +65,9 @@ class QueuedOperationTest {
 		Processor.clear()
 		Key.NUM_2.operation.push()
 		Key.PLUS.operation.push()
-		expect(2) { Processor.operations.size }
-		assertTrue { Processor.operations[0] is UnaryOperation }
-		assertTrue { Processor.operations[1] is BinaryOperation }
+		expect(2) { Processor.size() }
+		assertTrue { Processor[0] is UnaryOperation }
+		assertTrue { Processor[1] is BinaryOperation }
 		expect("2+0") { Processor.toString() }
 	}
 }

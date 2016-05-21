@@ -18,7 +18,7 @@ class SpecialOperationsTest {
 		listOf(Key.NUM_1, Key.NUM_2, Key.NUM_3)
 				.map { it.operation.push() }
 		BackOperation().push()
-		expect(2) { Processor.operations.size }
+		expect(2) { Processor.size() }
 		expect("12") { Processor.toString() }
 	}
 
@@ -27,7 +27,7 @@ class SpecialOperationsTest {
 		listOf(Key.NUM_1, Key.NUM_2, Key.NUM_3)
 				.map { it.operation.push() }
 		ClearOperation().push()
-		expect(0) { Processor.operations.size }
+		expect(0) { Processor.size() }
 	}
 
 	@Test
@@ -35,7 +35,7 @@ class SpecialOperationsTest {
 		listOf(Key.NUM_2, Key.PLUS, Key.NUM_2)
 				.map { it.operation.push() }
 		ExecOperation().push()
-		expect(1) { Processor.operations.size }
+		expect(1) { Processor.size() }
 		expect("4") { Processor.toString() }
 	}
 }
