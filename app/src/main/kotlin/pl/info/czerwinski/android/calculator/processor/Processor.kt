@@ -61,14 +61,15 @@ object Processor {
 	}
 
 	override fun toString(): String {
-		val builder = StringBuilder()
-		operations.fold(listOf<Any>(Value.EMPTY)) { list, next ->
-			when (next) {
-				is UnaryOperation -> list.dropLast(1) + next(list.last() as Value)
-				is BinaryOperation -> list + next + Value.EMPTY
-				else -> list
-			}
-		}.map { builder.append(it) }
-		return builder.toString()
+		return operations
+				.fold(listOf<Any>(Value.EMPTY)) { list, next ->
+					when (next) {
+						is UnaryOperation -> list.dropLast(1) + next(list.last() as Value)
+						is BinaryOperation -> list + next + Value.EMPTY
+						else -> list
+					}
+				}
+				.fold(StringBuilder()) { builder, next -> builder.append(next) }
+				.toString()
 	}
 }
