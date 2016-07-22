@@ -2,6 +2,8 @@ package pl.info.czerwinski.android.calculator.widget
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.ViewManager
+import org.jetbrains.anko.custom.ankoView
 import pl.info.czerwinski.android.calculator.keys.Key
 
 class NumericKeypad : Keypad {
@@ -24,4 +26,8 @@ class NumericKeypad : Keypad {
 				Key.PLUS_MINUS, Key.NUM_0, Key.DECIMAL_POINT, Key.EXEC
 		)
 	}
+}
+
+inline fun ViewManager.numericKeypad(theme: Int = 0, init: NumericKeypad.() -> Unit): NumericKeypad {
+	return ankoView({ ctx: Context -> NumericKeypad(ctx) }, theme) { init() }
 }

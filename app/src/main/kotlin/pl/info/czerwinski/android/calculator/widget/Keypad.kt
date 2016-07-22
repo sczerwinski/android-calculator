@@ -8,7 +8,7 @@ import pl.info.czerwinski.android.calculator.keys.Key
 
 abstract class Keypad : GridLayout {
 
-	var onStateChanged: (() -> Unit)? = null
+	private var onStateChangedCallback: (() -> Unit) = {}
 
 	constructor(context: Context?) : this(context, null, 0)
 	constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
@@ -19,10 +19,14 @@ abstract class Keypad : GridLayout {
 			button?.setText(key.stringId)
 			button?.setOnClickListener {
 				key.operation.push()
-				onStateChanged?.invoke()
+				onStateChangedCallback.invoke()
 			}
 			addView(button)
 		}
+	}
+
+	fun onStateChanged(callback: () -> Unit) {
+		onStateChangedCallback = callback
 	}
 
 	abstract fun keys(): Array<Key>
